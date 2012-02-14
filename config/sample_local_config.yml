@@ -1,0 +1,9 @@
+# Duplicate this sample file naming it local_config.yml then update the 
+# username and password values to match your own.
+#
+# Root-level nodes defined here will over-ride root-level nodes defined in 
+# the config.yml file.
+
+authentication: &AUTH
+  username: dl8wg0
+  password: secretpassword

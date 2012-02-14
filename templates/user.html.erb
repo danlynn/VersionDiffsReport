@@ -1,0 +1,28 @@
+<%
+=begin
+
+    Required options: 
+    
+        options [String] "env_name" name of environment whose users list maps user_id to User
+        options [String] "user_id" user ID to be used to find User - else just user_id will be displayed
+        options [User] "user" if given then this will be displayed
+    
+    If options["user"] is provided then it will be used to render.  Else the
+    options["user_id"] will be used to find a User using the user mappings for
+    the environment specified by options["env_name"].  If no User can be resolved
+    then the user_id itself will be displayed.
+    
+    Examples:
+    
+        render("templates/user.html.erb", options.merge({"user_id" => user_id}))
+        render("templates/user.html.erb", options.merge({"user" => user}))
+
+=end
+   
+   options['user'] ||= AppConfig['environments'][options['env_name']]['users'][options['user_id']]
+%>
+<% if options["user"] %>
+<div class="user" title="<%= options['user'].email %> : <%= options['user'].phone %>"><%= options['user'].name %></div>
+<% else %>
+<div class="user"><%= options['user_id'] %></div>
+<% end %>

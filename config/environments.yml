@@ -1,0 +1,69 @@
+# Note that svn repositories may be specified with either an URL by itself,
+# an URL and relative path, or just a path.  If an URL is provided then the
+# remote repository is queried directly.  If just a path is specified then 
+# the remote repository associated with that local directory is queried.  This
+# acts just like the URL and path of the common svn command-line utilities.
+# 
+# Note that all environments subnodes (like trunk, dev, etc) should be indented
+# 2 spaces since they are statically included into the environments root-level 
+# node.
+
+  trunk:
+    # identifies which version control system plugin to use
+    vcs_plugin: VcsPluginSvn
+    # svn repository url
+    url: https://svn.host.com/repository/trunk
+    # svn repository path
+    # path: /TestProject/Module1
+    <<: *AUTH
+    # Define module with a populate_users(users_hash, env_name, options) method that 
+    # populates the provided users hash with User instances key'd by user_id.  
+    # Note that this adds to any users already defined explicity for this 
+    # environment in this config file at AppConfig["environemnts"][env_name]["users"].
+    users_plugin:
+      module: UsersPluginFile
+      options:
+        path: /TestProject/WhoAmI.txt
+    # list of user_id -> User mappings
+    # Note that if a users_plugin is defined then it will add to these mappings.
+    # If no mappings are provided by this config or the users_plugin then just 
+    # the regular user IDs will appear in the reports.
+    # users:
+    #   fq3wg0: !ruby/object:User
+    #     name: Dan Lynn
+    #     email: dan.lynn@somewhere.com
+    #     phone: 727-123-4567
+    #   ab1cd0: !ruby/object:User
+    #     name: Bob Marley
+    #     email: bob.marley@something.com
+    #     phone: 727-123-4567
+
+  svn_mock:
+    # identifies which version control system plugin to use
+    vcs_plugin: VcsPluginSvnMock
+    # svn repository url
+    url: https://svn.host.com/repository/trunk
+    # svn repository path
+    # path: /TestProject/Module1
+    <<: *AUTH
+    # Define module with a populate_users(users_hash, env_name, options) method that 
+    # populates the provided users hash with User instances key'd by user_id.  
+    # Note that this adds to any users already defined explicity for this 
+    # environment in this config file at AppConfig["environemnts"][env_name]["users"].
+    users_plugin:
+      module: UsersPluginFile
+      options:
+        path: /TestProject/WhoAmI.txt
+    # list of user_id -> User mappings
+    # Note that if a users_plugin is defined then it will add to these mappings.
+    # If no mappings are provided by this config or the users_plugin then just 
+    # the regular user IDs will appear in the reports.
+    users:
+      aaaaa1: !ruby/object:User
+        name: Test User1
+        email: test.user1@somewhere.com
+        phone: 727-123-4567
+      aaaaa2: !ruby/object:User
+        name: Test User2
+        email: test.user2@something.com
+        phone: 727-123-4567

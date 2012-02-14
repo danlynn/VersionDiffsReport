@@ -1,0 +1,243 @@
+%ERB_STOP_EVAL
+
+
+# mappings that associate files/directories with deployment artifacts
+# List of summary groups.  A group may be made up of other groups.  A group
+# will appear as a section in a report with its own heading and description.
+# By default each summary group will be rendered with the templates/summary_group.html.erb
+# template unless a template exists named /templates/<name>.html.erb or a 
+# template property is specified for the summary group.
+report_groups:
+
+  cm_release:
+    name: CM Release Report
+    desc: |
+      Revisions: <%= first %> to <%= last %><br/>
+      Dates: <%= first_date %> to <%= last_date %><br/>
+      Combined report listing the changes since the last release broken down by EARs, Directories, and Files.
+    groups: ---
+    - EARs
+    - Directories
+    - Files
+    # Note that any options specified here will be merged with main report 
+    # options.  Thus, you can specify an env_name to be used for this and
+    # all nested groups.
+    # options:
+    #   env_name: trunk
+
+  ears:
+    name: EARs
+    desc: Summary statistics broken down by generated EAR files
+    groups: ---
+    - Common
+    - Module2
+    - Module3
+
+  directories:
+    name: Directories
+    desc: Summary statistics broken down by directories
+    groups: ---
+    - Common Dir
+    - Module3 Dir
+    - Module2 Dir
+    - Module1 Dir
+
+  files:
+    name: Files
+    desc: List of commits by file
+    template: commits_by_path
+    find_by:
+      commit_path:
+        match: "/./"
+
+  module1_by_tier:
+    name: Module1
+    desc: Summary statistics for Module1
+    find_by: module1
+    groups: ---
+    - front_end
+    - back_end
+
+  module2_by_tier:
+    name: Module2
+    desc: Summary statistics for Module2
+    find_by: module2
+    groups: ---
+    - front_end
+    - back_end
+
+  module3_by_tier:
+    name: Module3
+    desc: Summary statistics for Module3
+    find_by: module3
+    groups: ---
+    - front_end
+    - back_end
+
+  global_header_by_tier:
+    name: Global Header
+    desc: Summary statistics for Global Header
+    find_by: global_header
+    groups: ---
+    - front_end
+    - back_end
+
+  plugins:
+    name: Plugins
+    desc: ATG custom plugins and adapters
+    template: commits_by_path
+    find_by:
+      commit_path:
+        match: "/\/plugins\//i"
+        omit: "/\/(?:web_tier|WebContent)\//i"
+        # omit:  TestProject/web_tier/media/usps_cp/scripts/dojobuild/dojo/lib/plugins/text.js
+        # omit:  TestProject/module2/WebContent/common/scripts/dojo-1.4.3/dojox/drawing/plugins/tools
+        # match: TestProject/module1/Plugins/OrderExtensions/config
+
+  module1:
+    name: Module1
+    desc: Changes that affect the Module1
+    find_by:
+      commit_path:
+        match: "/\/Module1\//"
+
+  module2:
+    name: Module2
+    desc: Changes that affect Module2
+    find_by:
+      commit_path:
+        match: "/\/Module2\//"
+
+  module3:
+    name: Module3
+    desc: Changes that affect Module3
+    find_by:
+      commit_path:
+        match: "/\/Module3\//"
+
+  global_header:
+    name: Global Header
+    desc: Changes that affect the Global Header of all pages
+    find_by:
+      commit_path:
+        match: "/\/gh\//"
+
+  front_end:
+    name: Front End Changes
+    desc: "Changes that affect the web pages (JSPs, css, JS, images)"
+    find_by:
+      commit_path:
+        match: "/\/WebContent\/|\/WEB-INF\/|\.(?:js|jsp|css|png|jpg|jpeg|gif)$/i"
+
+  back_end:
+    name: Back End Changes
+    desc: Changes to code running on the server
+    find_by:
+      commit_path:
+        omit: "/\/WebContent\/|\/WEB-INF\/|\.(?:js|jsp|css|png|jpg|jpeg|gif)$/i"
+
+  database:
+    name: Database Changes
+    desc: "Changes that affect the database"
+    find_by:
+      commit_path:
+        match: "/database|hibernate|\.(?:sql|cfg\.xml)$/"
+
+  build:
+    name: Build Changes
+    desc: "Changes that affect the build process"
+    find_by:
+      commit_path:
+        match: "/\/build\//"
+
+  web_tier:
+    name: web_tier Changes
+    desc: "Changes to static content in web_tier"
+    find_by:
+      commit_path:
+        match: "/\/build\//"
+
+  test_bad_sort_group_parent:
+    find_by: test_bad_sort_group
+
+  test_bad_sort_group:
+    find_by: missing_group
+
+  test_loop_1:
+    groups: ---
+    - test_loop_2
+
+  test_loop_2:
+    groups: ---
+    - test_loop_1
+
+  test_commits_in_3_env:
+    name: "Test: All Commits from 2 Repositories"
+    desc: Show all commits from svn_mock and svn_mock2 and svn_mock3 repositories
+    groups: ---
+    - test_svn_mock
+    - test_svn_mock2
+    - test_svn_mock3
+
+  test_svn_mock:
+    name: "Test: svn_mock Repository"
+    desc: Show all commits from svn_mock repository
+    options:
+      env_name: svn_mock
+    find_by:
+      vcs:
+
+  test_svn_mock2:
+    name: "Test: svn_mock2 Repository"
+    desc: Show all commits from svn_mock repository
+    find_by:
+      vcs:
+        env_name: svn_mock
+
+  test_svn_mock3:
+    name: "Test: svn_mock3 Repository"
+    desc: Show all commits from non-existant svn_mock3 repository
+    options:
+      env_name: svn_mock3
+    find_by:
+      vcs:
+
+  test_no_commit_path_queries_1:
+    name: "Test: No commit_path Queries 1"
+    groups: ---
+    - test_no_commit_path_queries_2
+
+  test_no_commit_path_queries_2:
+    name: "Test: No commit_path Queries 2"
+    desc: Show only commits associated with Rick Smith but with no commit_path find_by in hierarchy
+    find_by:
+      user:
+        match: "/Rick Smith/"
+
+  test_summary_with_paths_template:
+    name: "Test: summary_with_paths template"
+    desc: Show all paths from svn_mock repository with commits associated with each
+    template: summary_with_paths
+
+  commits_for_each_user:
+    name: "Commits by User"
+    desc: Break the commits down by user
+    comment: "Renders the user_rollup template for each unique value in the 'ReportGroup#users' list passing the commits specific to each user.  Upon instantiation, ReportGroups which have for_each attributes will have new sub-groups created for each unique value of the for_each value.  Any sub-groups defined in this ReportGroup will be added to each of these new sub-groups.  The template for this group is replaced with an empty template and added to each of the new sub-groups."
+    for_each: users
+    template: commits_for_user
+
+
+# import local config for authentication aliases and property over-rides
+<<file: local_config.yml
+
+
+# define environments specifying remote repos and/or local workspaces
+environments:
+  # import environments
+  <<file: environments.yml
+  # import local environments specifically to over-ride environments subnodes
+  <<file: local_environments.yml
+
+
+# import persisted properties from previous runs
+<<file: local_persistence.yml

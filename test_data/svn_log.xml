@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<log>
+	<logentry revision="2520">
+		<author>hj2fb0</author>
+		<date>2011-12-10T14:58:49.834500Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module1/src/com/tp/component2/Component2.java</path>
+		</paths>
+		<msg>Add debug tracing for events.
+Fix status checking for Forward and Start Events.</msg>
+	</logentry>
+	<logentry revision="2521">
+		<author>rs3ax0</author>
+		<date>2011-12-10T15:07:50.568875Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/browse/forcollectors.jsp</path>
+		</paths>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module3/lib/some_back_end_test.jar</path>
+		</paths>
+		<msg>"cow" prefix added to cowids if there are none</msg>
+	</logentry>
+	<logentry revision="2522">
+		<author>dl8wg0</author>
+		<date>2011-12-10T16:05:49.209500Z</date>
+		<paths>
+			<path kind="" action="A">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/global/util/rscodes.xml</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/global/util/TPEFormData.xsl</path>
+		</paths>
+		<msg>Modified the transform to replace the special character codes with HTML entities for display.  
+rscodes.xml is the entity list and code-to-entity map.</msg>
+	</logentry>
+	<logentry revision="2523">
+		<author>dl8wg0</author>
+		<date>2011-12-10T16:11:08.428250Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module2/WebContent/common/scripts/tp/shop/component5/shop_comp5_validation.js</path>
+		</paths>
+		<msg>Fixed value selection error in special character detection process.  Will now correctly detect if special character is pasted in.</msg>
+	</logentry>
+	<logentry revision="2524">
+		<author>dl8wg0</author>
+		<date>2011-12-10T17:36:00.272000Z</date>
+		<paths>
+			<path kind="" action="A">/trunk/TestProject/AbstractLayerService/config/log4j.properties</path>
+		</paths>
+		<msg>Correct the logging info</msg>
+	</logentry>
+	<logentry revision="2526">
+		<author>bj3zx0</author>
+		<date>2011-12-10T18:13:50.568875Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/web_tier/media/js/component1/load.js</path>
+			<path kind="" action="M">/trunk/TestProject/web_tier/media/webcomponent1/css/wc1.css</path>
+			<path kind="" action="M">/trunk/TestProject/Common/WebContent/header/header.jsp</path>
+		</paths>
+		<msg>implementing styles for 2nd locator modal</msg>
+	</logentry>
+	<logentry revision="2527">
+		<author>ajxdg0</author>
+		<date>2011-12-10T18:35:57.647000Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderConfirmation.jsp</path>
+		</paths>
+		<msg/>
+	</logentry>
+	<logentry revision="2529">
+		<author>fsgj50</author>
+		<date>2011-12-10T19:17:18.912625Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module3/Authentication/CustReg/src/com/tp/registration/security/RegistrationXmlRequest.java</path>
+		</paths>
+		<msg>fixed potential null pointer if registration cannot be contacted.</msg>
+	</logentry>
+	<logentry revision="2530">
+		<author>dl8wg0</author>
+		<date>2011-12-10T19:17:42.881375Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module2/WebContent/common/scripts/tp/shop/component5/shop_comp5.js</path>
+		</paths>
+		<msg>Fixed a variable problem that would cause an undefined quantity value to be sent to the cart.</msg>
+	</logentry>
+	<logentry revision="2533">
+		<author>ajxdg0</author>
+		<date>2011-12-10T21:37:58.662625Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderCancellation.jsp</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/gadgets/footer.jsp</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderCCExpireSoon.jsp</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderCancellationPaymentFailure.jsp</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderEndingSoon.jsp</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderResumed.jsp</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/WEB-INF/tags/module3/emailPageContainer.tag</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderCCAdded.jsp</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderConfirmation.jsp</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderChanged.jsp</path>
+			<path kind="" action="M">/trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderSuspended.jsp</path>
+		</paths>
+		<msg>Hide images in emails for module3 orders</msg>
+	</logentry>
+	<logentry revision="2535">
+		<author>rs3ax0</author>
+		<date>2011-12-11T16:52:32.865750Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module3/EStore/src/atg/projects/module3/order/purchase/StoreCartFormHandler.java</path>
+		</paths>
+		<msg>redirect "add to favorite" to local login</msg>
+	</logentry>
+	<logentry revision="2536">
+		<author>dl8wg0</author>
+		<date>2011-12-11T20:38:59.975125Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module2/src/com/tp/component5/dao/TPEDAO.java</path>
+			<path kind="" action="M">/trunk/TestProject/Module2/WebContent/common/scripts/tp/shop/component5/shop_comp5_pms_validation.js</path>
+			<path kind="" action="M">/trunk/TestProject/Module2/WebContent/common/scripts/tp/shop/component5/shop_comp5_landing.js</path>
+			<path kind="" action="M">/trunk/TestProject/Module2/WebContent/shop/component5/comp5-form.jsp</path>
+		</paths>
+		<msg>Added login error and made some code cleanups.</msg>
+	</logentry>
+	<logentry revision="2537">
+		<author>dl8wg0</author>
+		<date>2011-12-11T20:40:01.897000Z</date>
+		<paths>
+			<path kind="" action="A">/trunk/TestProject/Module2/WebContent/shop/component5/content/login-error.jsp</path>
+		</paths>
+		<msg>Adding login error text for the popup.</msg>
+	</logentry>
+	<logentry revision="2538">
+		<author>dl8wg0</author>
+		<date>2011-12-11T20:42:13.068875Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module2/src/hibernate.cfg.xml</path>
+		</paths>
+		<msg>turn off logging and cleanup code.</msg>
+	</logentry>
+	<logentry revision="2539">
+		<author>ajxdg0</author>
+		<date>2011-12-11T21:28:14.443875Z</date>
+		<paths>
+			<path kind="" action="M">/trunk/TestProject/Module3/EStore/src/com/tp/module3/commerce/order/purchase/TPStoreCartFormHandler.java</path>
+		</paths>
+		<msg>Fix NPE from child class (TPBulkCartFormHandler)</msg>
+	</logentry>
+</log>

@@ -1,0 +1,23 @@
+# Duplicate this sample file naming it local_config.yml then update the 
+# username and password values to match your own.
+
+
+# Duplicate this sample file naming it local_environments.yml then specify
+# any local environment subnodes that should over-ride those found in 
+# environments.yml.
+#
+# Note that the sub-nodes MUST BE INDENTED 2 spaces since they are statically 
+# included into the environments root-level node right after the 
+# environments.yml file's subnodes.
+#
+# The follow example shows the 'trunk' environment being over-ridden to point
+# at a local svn repo workspace instead of directly hitting the remote svn
+# repo using the URL.  This is useful if you want to tie the report's automatic
+# determination of first and last commits to the version checked-out in a 
+# local workspace (like a build area).
+#
+#   trunk:
+#     vcs_plugin: VcsPluginSvn
+#     path: /Users/danlynn/Documents/Java/TestProject/Module3
+#     <<: *AUTH
+#

@@ -1,0 +1,61 @@
+--- 
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/browse/forcollectors.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/gadgets/footer.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderCancellation.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderCancellationPaymentFailure.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderCCAdded.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderCCExpireSoon.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderChanged.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderConfirmation.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderEndingSoon.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderResumed.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/emailtemplates/orderSuspended.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/WEB-INF/tags/module3/emailPageContainer.tag

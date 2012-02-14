@@ -1,0 +1,102 @@
+%ERB_STOP_EVAL
+
+
+# List of summary groups.  A group may be made up of other groups.  A group
+# will appear as a section in a report with its own heading and description.
+# By default each summary group will be rendered with the templates/summary_group.html.erb
+# template unless a template exists named /templates/<name>.html.erb or a 
+# template property is specified for the summary group.
+report_groups:
+
+  cm_release:
+    name: CM Release Report
+    desc: |
+      Revisions: <%= first %> to <%= last %><br/>
+      Dates: <%= first_date %> to <%= last_date %><br/>
+      Combined report listing the changes since the last release broken down by EARs, Directories, and Files.
+    groups: ---
+    - EARs
+    - Directories
+    - Files
+    # Note that any options specified here will be merged with main report 
+    # options.  Thus, you can specify an env_name to be used for this and
+    # all nested groups.
+    # options:
+    #   env_name: trunk
+  
+  ears:
+    name: EARs
+    desc: Summary statistics broken down by generated EAR files
+    groups: ---
+    - Module1
+    - Module3
+    - Module2
+
+- name: Directories
+  desc: Summary statistics broken down by directories
+  groups: ---
+  - Module1 Dir
+  - Module2 Dir
+  - Module3 Dir
+  - Module4 Dir
+
+
+# mappings that associate files/directories with deployment artifacts
+# By default each group will be rendered with the templates/group.html.erb
+# template unless a template exists named /templates/<name>.html.erb or a 
+# template property is specified for the group.
+groups: ---
+
+- name: Plugins
+  desc: Framework custom plugins and adapters
+  template: commits_by_path
+  find_by:
+    commit_path:
+      match: "/\/plugins\//i"
+      omit: "/\/(?:web_tier|WebContent)\//i"
+      # omit:  TestProject/web_tier/media/tp_cp/scripts/dojobuild/dojo/lib/plugins/text.js
+      # omit:  TestProject/PSE/WebContent/module1/scripts/dojo-1.4.3/dojox/drawing/plugins/tools
+      # match: TestProject/Module4/Plugins/OrderExtensions/config
+
+- name: Module1 EAR
+  desc: The Module1 project or any of the module1 sub-projects in other projects
+  template: paths_by_commit
+  find_by:
+    commit_path:
+      match: "/\/module1\//i"
+
+- name: Module3 EAR
+  desc: Resources associated with Module3.ear
+  template: paths_by_commit
+  find_by:
+    commit_path:
+      match: "/\/(?:module1|module3)\//i"
+
+- name: Module3 Dir
+  desc: /TestProject/Module3
+  find_by:
+    commit_path:
+      match: "/\/TestProject\/Module3/"
+
+- name: Prod Support Team
+  desc: Updates by the prod support team
+  find_by:
+    user:
+      match: "/Bill Jones|Rick Smith/"
+
+
+
+# import local config for authentication aliases and property over-rides
+<<file: local_config.yml
+
+
+# define environments specifying remote repos and/or local workspaces
+environments:
+  # import environments
+  <<file: environments.yml
+  # import local environments specifically to over-ride environments subnodes
+  <<file: local_environments.yml
+
+
+# import persisted properties from previous runs
+<<file: local_persistence.yml

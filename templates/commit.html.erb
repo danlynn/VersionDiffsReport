@@ -1,0 +1,9 @@
+<% 
+   # Required options: commit
+%>
+<div class="commit" title="<%= options["commit"].commit_id %>">
+  <div class="commit_id"><%= options["commit"].commit_id %></div>
+  <div class="user_id"><%= render("templates/user.html.erb", options.merge({"user_id" => options["commit"].user_id})) %></div>
+  <div class="commit_time"><%= options["commit"].time %></div>
+  <div class="commit_message"><%= options["commit"].message %></div>
+</div>

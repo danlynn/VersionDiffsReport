@@ -1,0 +1,14 @@
+<% 
+   # Required options: commits, path
+%>
+<div class="commit">
+<%= render("templates/path.html.erb", options) %>
+  <div class="paths">
+<% 
+  commits_for_path = find_by_commit_path(options["commits"], {"match" => options["path"]})
+  commits_for_path.each do |commit|
+    render("templates/commit.html.erb", options.merge({"commit" => commit}))
+  end 
+%>
+  </div>
+</div>

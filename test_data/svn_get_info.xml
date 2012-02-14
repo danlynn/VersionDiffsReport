@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<info>
+	<entry
+	   kind="dir"
+	   path="trunk"
+	   revision="2537">
+		<url>https://svn.host.com/repository/trunk</url>
+		<repository>
+			<root>https://svn.host.com/repository</root>
+			<uuid>3e0f3ac3-4b99-164a-88fd-4f4f35129deb</uuid>
+		</repository>
+		<commit
+		   revision="2537">
+			<author>dl8wg0</author>
+			<date>2011-12-11T20:40:01.897000Z</date>
+		</commit>
+	</entry>
+</info>

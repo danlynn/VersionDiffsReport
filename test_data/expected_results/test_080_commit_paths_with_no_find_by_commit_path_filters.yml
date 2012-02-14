@@ -1,0 +1,16 @@
+--- 
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/browse/forcollectors.jsp
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/lib/some_back_end_test.jar
+- !ruby/object:CommitPath 
+  attributes: 
+    kind: 
+    action: M
+  path: /trunk/TestProject/Module3/EStore/src/atg/projects/module3/order/purchase/StoreCartFormHandler.java

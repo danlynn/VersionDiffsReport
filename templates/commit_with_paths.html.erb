@@ -1,0 +1,13 @@
+<% 
+   # Required options: commit
+%>
+<div class="commit">
+<%= render("templates/commit.html.erb", options) %>
+  <div class="paths">
+<% 
+  options["commit"].paths.each do |path|
+    render("templates/path.html.erb", options.merge({"path" => path}))
+  end 
+%>
+  </div>
+</div>

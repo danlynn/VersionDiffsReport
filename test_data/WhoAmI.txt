@@ -1,0 +1,8 @@
+Please list alphabetically by vcs user ID.
+
+hj2fb0    Hanna Jones         hanna.jones@something.com          816-123-4567
+rs3ax0    Rick Smith          rick.smith@somewhere.com           816-123-4568
+bj3zx0    Bill Jones          bill.jones@something.com           816-123-4569
+fsgj50    Fred Smith          fred.smith@somewhere.com           816-123-4560
+ajxdg0    Al Jones            al.jones@somewhere.com             816-123-4561
+dl8wg0    Dan Lynn            dan.lynn@something.com             816-123-4562

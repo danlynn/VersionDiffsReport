@@ -1,0 +1,16 @@
+<% 
+   # Required options: commits
+%>
+<div class="summary">
+  <div class="header">
+    <div class="title"><%= @name %></div>
+    <div class="desc"><%= @attributes["desc"] %></div>
+  </div>
+  <div class="paths">
+<% 
+  options["commit"].paths.each do |path|
+    render("templates/path.html.erb", options.merge({"path" => path}))
+  end 
+%>
+  </div>
+</div>

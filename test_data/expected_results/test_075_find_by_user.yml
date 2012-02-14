@@ -1,0 +1,30 @@
+--- 
+- !ruby/object:Commit 
+  commit_id: "2521"
+  line_count: 
+  message: "\"cow\" prefix added to cowids if there are none"
+  paths: 
+    - !ruby/object:CommitPath 
+      attributes: 
+        kind: 
+        action: M
+      path: /trunk/TestProject/Module3/Component3/j2ee-apps/Component3/module3.war/browse/forcollectors.jsp
+    - !ruby/object:CommitPath 
+      attributes: 
+        kind: 
+        action: M
+      path: /trunk/TestProject/Module3/lib/some_back_end_test.jar
+  time: 2011-12-10 15:07:50.568875 Z
+  user_id: rs3ax0
+- !ruby/object:Commit 
+  commit_id: "2535"
+  line_count: 
+  message: redirect "add to favorite" to local login
+  paths: 
+    - !ruby/object:CommitPath 
+      attributes: 
+        kind: 
+        action: M
+      path: /trunk/TestProject/Module3/EStore/src/atg/projects/module3/order/purchase/StoreCartFormHandler.java
+  time: 2011-12-11 16:52:32.865750 Z
+  user_id: rs3ax0
